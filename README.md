@@ -1,4 +1,4 @@
-# StrainIQ - Strain Identification and Quantification
+# StrainIQ - Strain *I*dentification and *Q*uantification
 StrainIQ is an n-gram based method to identify and quantify microbial communities in metagenomics samples.
 
 **Dependencies:**
