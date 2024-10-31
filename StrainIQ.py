@@ -58,6 +58,7 @@ def main():
             my_parser.error("identifier require -sample")
         #print(args.dsem)
         #print(args.sample)
+        print("args.glist in main:", args.glist)
         identifier(args.dsem, args.glist, args.sample)
     elif args.p == "quantifier":
         if args.dsem is None:

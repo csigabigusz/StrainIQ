@@ -11,6 +11,7 @@ def main():
     identifier(model, sample)
 
 def identifier(model, glist, sample):
+   print("args.glist in identifier function:", glist)
    b_ngrams = set()
    score={} #square score
    score2={} #cube score
