@@ -10,7 +10,7 @@ def main():
     sample = "set1.fastq"
     identifier(model, sample)
 
-def identifier(model, sample):
+def identifier(model, glist, sample):
    b_ngrams = set()
    score={} #square score
    score2={} #cube score
@@ -30,10 +30,18 @@ def identifier(model, sample):
            if key == 'cutoff':
                cutoff =  float(line.strip().split("=")[1])
    #initialize score matrix
-   for i in range(1,no_genome + 1):
+   """" # this loads the dictionary with wrong keys
+      for i in range(1,no_genome + 1):
       score[i]=0
       score2[i]=0
       cNgram[i]=0
+   """
+   with open(glist) as b:
+      for line in b:
+         file = line.rstrip().split("\t")
+         score[int(file[0])]=0
+         score2[int(file[0])]=0
+         cNgram[int(file[0])]=0
    # initialize score matrix END
    fasta_sequences = SeqIO.parse(open(sample),'fastq')
    for fasta in fasta_sequences:
