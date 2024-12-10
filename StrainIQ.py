@@ -49,15 +49,10 @@ def main():
         model(args.n, args.glist)
         print("builder")
     elif args.p == "identifier":
-        #print(args.p)
-        #print(args.n)
-        #print(args.ng)
         if args.dsem is None:
              my_parser.error("identifier require -dsem")
         if args.sample is None:
             my_parser.error("identifier require -sample")
-        #print(args.dsem)
-        #print(args.sample)
         print("args.glist in main:", args.glist)
         identifier(args.dsem, args.glist, args.sample)
     elif args.p == "quantifier":
